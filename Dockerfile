@@ -1,6 +1,6 @@
 FROM node:10-alpine
 WORKDIR /nodejs-ws
-COPY /.package*.json ./
+COPY ./package*.json ./
 RUN npm install --production && npm cache clean --force
 COPY ./src ./src
 ENV NODE_ENV=production
