@@ -1,5 +1,5 @@
 FROM node:10-alpine
-WORKDIR /learing-nodejs
+WORKDIR /nodejs-ws
 COPY /.package*.json ./
 RUN npm install --production && npm cache clean --force
 COPY ./src ./src
