@@ -1,0 +1,24 @@
+version: "3.1"
+services:
+  app:
+    image: phgoff/nodejs-workshop:1
+    ports:
+      - "3000:3000"
+    networks:
+      - backend
+      - frontend
+
+  redis:
+    image: redis:4.0.0-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    networks:
+      - backend
+    volumes:
+      - redis-data:/data
+
+networks:
+  backend:
+  frontend:
+
+volumes:
+  redis-data:
